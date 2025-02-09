@@ -2,20 +2,20 @@
 #include <queue>
 #include <cstdlib>
 #include <ctime>
-#include <conio.h> // For capturing keyboard input
-#include <fstream> // For saving high scores
+#include <conio.h>
+#include <fstream>
 
 using namespace std;
 
 class SnakeGame {
 private:
-    int gridSize;                          // Size of the grid (NxN)
-    queue<pair<int, int>> snake;           // Snake represented as a queue
-    pair<int, int> food;                   // Current food position
-    char direction;                        // Current direction of the snake
-    bool gameOver;                         // Game state
-    int score;                             // Current score
-    int highScore;                         // Highest score saved
+    int gridSize;
+    queue<pair<int, int>> snake;
+    pair<int, int> food;
+    char direction;
+    bool gameOver;
+    int score;
+    int highScore;
 
     void loadHighScore() {
         ifstream file("highscore.txt");
@@ -62,7 +62,6 @@ private:
             case 'D': newHead.second++; break;
         }
 
-        // Check for collisions
         if (newHead.first < 0 || newHead.first >= gridSize || 
             newHead.second < 0 || newHead.second >= gridSize || 
             isSnake(newHead)) {
@@ -70,28 +69,26 @@ private:
             return;
         }
 
-        // Move the snake
         snake.push(newHead);
 
-        // Check if food is eaten
         if (newHead == food) {
             score++;
             generateFood();
         } else {
-            snake.pop(); // Remove tail
+            snake.pop();
         }
     }
 
     void displayBoard() {
-        system("cls"); // Clear the console for real-time display
+        system("cls");
         for (int i = 0; i < gridSize; i++) {
             for (int j = 0; j < gridSize; j++) {
                 if (isSnake({i, j}))
-                    cout << "O "; // Snake body
+                    cout << "O ";
                 else if (food == make_pair(i, j))
-                    cout << "F "; // Food
+                    cout << "F ";
                 else
-                    cout << ". "; // Empty space
+                    cout << ". ";
             }
             cout << endl;
         }
@@ -100,7 +97,7 @@ private:
 
 public:
     SnakeGame(int size) : gridSize(size), direction('D'), gameOver(false), score(0) {
-        snake.push({gridSize / 2, gridSize / 2}); // Start snake in the center
+        snake.push({gridSize / 2, gridSize / 2});
         generateFood();
         loadHighScore();
     }
@@ -117,7 +114,7 @@ public:
 
             moveSnake();
             displayBoard();
-            _sleep(200); // Control game speed
+            _sleep(200);
         }
 
         saveHighScore();
@@ -132,7 +129,6 @@ public:
     }
 
     void reset() {
-        // Reset game state
         while (!snake.empty()) snake.pop();
         snake.push({gridSize / 2, gridSize / 2});
         direction = 'D';
@@ -143,9 +139,8 @@ public:
 };
 
 int main() {
-    srand(time(0)); // Seed for random number generation
-    SnakeGame game(10); // Initialize with a 10x10 grid
+    srand(time(0));
+    SnakeGame game(10);
     game.play();
     return 0;
 }
-
