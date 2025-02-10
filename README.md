@@ -1,10 +1,10 @@
 #  Snake Game
 
 **Authors:**  
-Ved Bhoraniya: 202401242
-Sukun Dalal: 202401217
-Tanishk Dhawan: 202401224
-Uma Sainitin Burra: 202401487
+-Ved Bhoraniya: 202401242
+-Sukun Dalal: 202401217
+-Tanishk Dhawan: 202401224
+-Uma Sainitin Burra: 202401487
 
 ---
 
