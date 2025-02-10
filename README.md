@@ -1,35 +1,113 @@
-# Snake Game in C++
+#  Snake Game
 
-## Authors
-- Ved
-- Tanishk
-- Sukun
-- Nitin
+**Authors:**  
+Ved Bhoraniya, Sukun Dalal, Tanishk Dhawan, Uma Sainitin Burra
 
 ---
 
-## Description
-This is a classic Snake Game implemented in C++ without using any external libraries. The game runs in the console and provides a fun, interactive way to play the traditional snake game.
+##  Table of Contents
 
-The game includes the following features:
-- A 10x10 grid where the snake moves and grows.
-- Food spawns randomly on the grid, and the snake grows when it eats the food.
-- The game ends if the snake collides with itself or the boundary of the grid.
-- A score counter and a high score tracker that saves your best score to a file (`highscore.txt`).
-- Option to restart the game after a game-over.
-
----
-
-## Requirements
-- **Operating System**: Windows (for `_kbhit()` and `_getch()` functions).
-- **Compiler**: A C++ compiler that supports C++11 or later.
-  - Examples: MinGW (for Windows), GCC (for Linux), or MSVC (Visual Studio).
-- **IDE (Optional)**: Visual Studio Code, Dev-C++, Code::Blocks, or any other IDE that supports C++ development.
+- [About the Game](#about-the-game)
+- [Controls](#controls)
+- [Code Structure](#code-structure)
+- [Grid Size](#grid-size)
+- [Major Highlights](#major-highlights)
+- [How to Compile & Run](#how-to-compile--run)
+- [How to Play](#how-to-play)
+- [Snippet](#snippet)
 
 ---
 
-## How to Run the Game
-1. Clone the repository or copy the source code into a `.cpp` file.
-2. Compile the program using a C++ compiler:
+## About the Game
+
+This is a **classic Snake game** implemented in **C++** using the Windows console. The game features:
+
+- **Smooth controls**
+- **Dynamic speed adjustments**
+- **High-score system**
+- **Colorful food**
+
+The objective is simple: **eat food, grow longer, and avoid hitting the walls or yourself**.
+
+---
+
+##  Controls
+
+Use the following keys to navigate the snake:
+
+- **W / Up Arrow** → Move Up
+- **S / Down Arrow** → Move Down
+- **A / Left Arrow** → Move Left
+- **D / Right Arrow** → Move Right
+- **Q** → Quit the Game
+
+After Game Over:
+- **R** → Restart the Game
+
+---
+
+## Code Structure
+
+The game is structured into various functions for better modularity:
+
+- **`SnakeGame` Class** → Manages game logic and state
+- **`initializeConsole()`** → Sets up the console for smooth rendering
+- **`moveSnake()`** → Moves the snake and checks for collisions
+- **`generateFood()`** → Spawns food in a random location
+- **`displayBoard()`** → Renders the game frame-by-frame
+- **`play()`** → Runs the main game loop
+- **`reset()`** → Resets the game after Game Over
+
+---
+
+##  Grid Size
+
+- The game is played on a **25x25 grid**
+- The grid is enclosed with **borders (`#`)**
+- The snake (`@`, `O`) moves inside the grid, eating food (`*`)
+
+---
+
+##  Major Highlights
+
+- **Smooth Keyboard Input** → Supports both **WASD and Arrow keys**
+- **Dynamic Speed System** → Game speeds up as you score more points
+- **High Score System** → Saves and loads the **best score** from a file
+- **Colorful Food** → Food appears in random colors for a vibrant look
+- **Collision Detection** → Prevents movement into walls and itself
+- **Restart Option** → Easily restart after Game Over
+
+---
+
+##  How to Compile & Run
+
+### **Using g++ (MinGW) on Windows**
+
+1. **Install MinGW**: Download and install [MinGW](http://www.mingw.org/) and add it to your system’s PATH.
+2. **Open Command Prompt**: Navigate to the folder containing `snake_game.cpp`.
+3. **Compile the Program**:
    ```bash
-   g++ -o SnakeGame SnakeGame.cpp
+   g++ main.cpp -o snake_game.exe -std=c++11
+   
+4.**Run the Game**:
+   ```bash
+   snake_game.exe
+```
+
+
+
+## Snippet
+
+
+
+
+
+
+
+
+    
+
+
+
+
+1
