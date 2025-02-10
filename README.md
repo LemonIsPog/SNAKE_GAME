@@ -98,16 +98,5 @@ The game is structured into various functions for better modularity:
 
 ## Snippet
 
+![Screenshot (2)](https://github.com/user-attachments/assets/a06d45d3-c646-4ff9-a6e4-a9ac94babf40)
 
-
-
-
-
-
-
-    
-
-
-
-
-1
